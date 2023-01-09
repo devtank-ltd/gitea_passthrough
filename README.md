@@ -14,8 +14,10 @@ Installing
 ==========
 
 Rename/move this folder as /home/git
-
 This will mean when git hooks try and call /home/git/gitea, they call this script.
+
+Copy etc/sudoers.d/gitea_passthrough to /etc/sudoers.d/gitea_passthrough and change permissions to be read only and only by root.
+This the script can change to the git user on the host and push to git user in gitea.
 
 Fill in you MySQL login in the file mysql_vars.
 Fill in you LXC gitea container's IP address in the file gitea_lxc.
