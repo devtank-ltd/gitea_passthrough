@@ -11,6 +11,7 @@ fi
 if [ "$ENV_FILE" == "" ]
 then
   env_file=$(mktemp)
+  chmod 777 $env_file
   env | grep GIT > $env_file
   if [ "$(stat -c %s $env_file)" -gt 1 ]
   then
